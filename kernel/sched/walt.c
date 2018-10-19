@@ -398,7 +398,7 @@ void sched_account_irqstart(int cpu, struct task_struct *curr, u64 wallclock)
 		return;
 
 	/*
-	 * We don’t have to note down an irqstart event when cycle
+	 * We don't have to note down an irqstart event when cycle
 	 * counter is not used.
 	 */
 	if (!use_cycle_counter)
@@ -3333,4 +3333,4 @@ void walt_sched_init(struct rq *rq)
 
 	walt_cpu_util_freq_divisor =
 	    (sched_ravg_window >> SCHED_CAPACITY_SHIFT) * 100;
-}
+} 

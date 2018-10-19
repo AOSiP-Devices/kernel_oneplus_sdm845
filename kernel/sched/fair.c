@@ -7485,6 +7485,8 @@ static int select_energy_cpu_brute(struct task_struct *p, int prev_cpu, int sync
 		goto out;
 	}
 
+	rcu_read_lock();
+
 	sd = rcu_dereference(per_cpu(sd_ea, prev_cpu));
 	if (!sd) {
 		target_cpu = prev_cpu;
@@ -11979,4 +11981,4 @@ void check_for_migration(struct rq *rq, struct task_struct *p)
 	}
 }
 
-#endif /* CONFIG_SCHED_WALT */
+#endif /* CONFIG_SCHED_WALT */ 
